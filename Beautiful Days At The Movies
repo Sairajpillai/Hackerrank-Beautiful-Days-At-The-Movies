@@ -1,0 +1,51 @@
+import java.util.*;
+public class Solution
+{
+public static void main(String[] args) {
+   Scanner sc=new Scanner(System.in);
+   int st=sc.nextInt();
+   int en=sc.nextInt();
+   int n=sc.nextInt();
+   int counter=0;
+   
+   int i,j;
+   List<Integer> list = new ArrayList<Integer>();
+   for( i=st;i<=en;i++){
+     
+       list.add(i);
+      
+   }
+    List<Integer> revlist = new ArrayList<Integer>();
+   
+      for(i=0;i<list.size();i++){
+          int rev_num = 0;
+       int num=list.get(i);
+       while(num > 0)
+        {
+            rev_num = rev_num * 10 + num % 10;
+            num = num / 10;
+        }
+       
+        revlist.add(rev_num);
+       
+   }
+   List<Integer> outputlist = new ArrayList<Integer>();
+    List<Double> outputlist1 = new ArrayList<Double>();
+  
+   for(int m=0;m<list.size();m++){
+     
+       outputlist1.add((Math.abs(Double.valueOf(list.get(m))-Double.valueOf(revlist.get(m))))/n);
+      
+       
+   }
+  // }
+  for(int k=0;k<outputlist1.size();k++){
+  if(outputlist1.get(k)%2==0||outputlist1.get(k)%2==1){
+   counter++;
+  }}
+ System.out.println(counter);
+
+}
+
+
+}
